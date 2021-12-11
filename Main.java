@@ -1,5 +1,11 @@
+/*
+	Contribuidor: Eduardo Programador
+	Visite: www.eduardoprogramador.com
+*/
+
 import java.text.NumberFormat;
 import java.util.Scanner;
+import java.lang.Math;
 
 public class Main {
     public static void main(String[] args) {
@@ -7,7 +13,7 @@ public class Main {
         Scanner in = new Scanner(System.in);
             int operador = 0;
 
-        System.out.println("Operação \n\n 1:/ | 2:* | 3:- | 4:+ ");
+        System.out.println("Operação \n\n 1:/ | 2:* | 3:- | 4:+ | 5:^");
         operador = in.nextInt();
 
         System.out.println("Num 1: ");
@@ -24,6 +30,8 @@ public class Main {
             num[2] = sub(num[0],num[1]);
         if (operador == 4)
             num[2] = add(num[0],num[1]);
+	if (operador == 5)
+	    num[2] = exp(num[0],num[1]);
 
         System.out.println("Result : "+NumberFormat.getInstance().format(num[2]));
     }
@@ -39,4 +47,10 @@ public class Main {
     public static Double add(Double num_1, Double num_2){
         return num_1+num_2;
     }
+
+    public static Double exp(Double num_1, Double num_2){
+        return Math.pow(num_1,num_2);
+    }
+
+    
 }
